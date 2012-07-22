@@ -1,0 +1,12 @@
+#summary One-sentence summary of this page.
+
+= 简介 =
+
+为高档别墅设计自动化控制、安保监控、告警联动、前段音视频服务。
+
+= 总体设计 =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
