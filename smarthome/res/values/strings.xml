@@ -3,5 +3,16 @@
 
     <string name="hello">Hello World, SmartHomeActivity!</string>
     <string name="app_name">智能家居</string>
+    <string name="tstinfo">SmartHome ver 0.1</string>
+    <string name="Desc_img_ledctrl">灯控图标</string>
+    <string name="Desc_img_curtainctrl">窗帘控制</string>
+    <string name="Desc_img_moviectrl">影院控制</string>
+    <string name="Desc_img_musicctrl">背景音乐控制</string>
+    <string name="Desc_img_speechctrl">对讲控制</string>
+    <string name="Desc_img_cameractrl">视频监控</string>
+    <string name="Desc_img_warmctrl">地暖控制</string>
+    <string name="Desc_img_aircondnctrl">空调控制</string>
+    <string name="Desc_img_doorctrl">门禁控制</string>
+    <string name="Desc_img_safectrl">安防</string>
 
 </resources>
