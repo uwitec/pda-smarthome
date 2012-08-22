@@ -1,12 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/main_bkg" 
+    >
 
     <TextView
-        android:layout_width="fill_parent"
+        android:id="@+id/lbl_info"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello" />
+        android:textColor="#000000"
+        android:layout_x="730dp"
+        android:layout_y="0dp"        
+        android:text="@string/tstinfo" /> 
+        
+<!-- 功能按钮布局区 -->        
+        
+        <!-- 按钮：灯光控制 -->
+        <ImageButton
+            android:id="@+id/btn_ledcrtl"
+            android:contentDescription="@string/Desc_img_ledctrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="16dp"
+            android:layout_y="602dp"
+            android:src="@drawable/btn_ledup" 
+            android:background="#0000" /> 
 
-</LinearLayout>
+        <!-- 按钮：窗帘控制 -->
+        <ImageButton
+            android:id="@+id/btn_curtaincrtl"
+            android:contentDescription="@string/Desc_img_curtainctrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="142dp"
+            android:layout_y="602dp"
+            android:src="@drawable/btn_curtainup" 
+            android:background="#0000" /> 
+            
+        <!-- 按钮：影院控制 -->
+        <ImageButton
+            android:id="@+id/btn_moviecrtl"
+            android:contentDescription="@string/Desc_img_moviectrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="267dp"
+            android:layout_y="602dp"
+            android:src="@drawable/btn_movieup" 
+            android:background="#0000" />
+        
+        <!-- 按钮：音乐控制 -->
+        <ImageButton
+            android:id="@+id/btn_musiccrtl"
+            android:contentDescription="@string/Desc_img_musicctrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="393dp"
+            android:layout_y="602dp"
+            android:src="@drawable/btn_musicup" 
+            android:background="#0000" />          
+      
+        <!-- 按钮：语音/可视对讲 -->
+        <ImageButton
+            android:id="@+id/btn_speechcrtl"
+            android:contentDescription="@string/Desc_img_speechctrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="518dp"
+            android:layout_y="602dp"
+            android:src="@drawable/btn_speechup" 
+            android:background="#0000" /> 
+            
+        <!-- 按钮：视频监控 -->
+        <ImageButton
+            android:id="@+id/btn_cameractrl"
+            android:contentDescription="@string/Desc_img_cameractrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="644dp"
+            android:layout_y="602dp"
+            android:src="@drawable/btn_cameraup" 
+            android:background="#0000" />  
+            
+        <!-- 按钮：地暖控制 -->
+        <ImageButton
+            android:id="@+id/btn_warmctrl"
+            android:contentDescription="@string/Desc_img_warmctrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="769dp"
+            android:layout_y="602dp"
+            android:src="@drawable/btn_warmup" 
+            android:background="#0000" />  
+            
+        <!-- 按钮：空调控制-->
+        <ImageButton
+            android:id="@+id/btn_aircondnctrl"
+            android:contentDescription="@string/Desc_img_aircondnctrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="895dp"
+            android:layout_y="602dp"
+            android:src="@drawable/btn_airconup" 
+            android:background="#0000" />  
+            
+        <!-- 按钮：门禁控制-->
+        <ImageButton
+            android:id="@+id/btn_doorctrl"
+            android:contentDescription="@string/Desc_img_doorctrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="1020dp"
+            android:layout_y="602dp"
+            android:src="@drawable/btn_doorup" 
+            android:background="#0000" />  
+            
+        <!-- 按钮：安全防护-->
+        <ImageButton
+            android:id="@+id/btn_safectrl"
+            android:contentDescription="@string/Desc_img_safectrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="1145dp"
+            android:layout_y="602dp"
+            android:src="@drawable/btn_safeup" 
+            android:background="#0000" />         
+
+</AbsoluteLayout>
