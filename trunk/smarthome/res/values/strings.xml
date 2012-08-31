@@ -14,5 +14,7 @@
     <string name="Desc_img_aircondnctrl">空调控制</string>
     <string name="Desc_img_doorctrl">门禁控制</string>
     <string name="Desc_img_safectrl">安防</string>
+    <string name="multicamera_activity">多摄像头监控</string>
+    <string name="onecamera_activity">单摄像头</string>
 
 </resources>
