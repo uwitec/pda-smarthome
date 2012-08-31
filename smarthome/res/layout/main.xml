@@ -125,6 +125,6 @@
             android:layout_x="1145dp"
             android:layout_y="602dp"
             android:src="@drawable/btn_safeup" 
-            android:background="#0000" />         
+            android:background="#0000" />
 
 </AbsoluteLayout>

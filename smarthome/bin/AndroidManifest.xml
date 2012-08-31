@@ -20,6 +20,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name="com.prj.smarthome.MultiCameraActivity"
+            android:label="@+string/multicamera_activity" >
+        </activity>
+        
+         <activity
+            android:name="com.prj.smarthome.OneCamera"
+            android:label="@+string/onecamera_activity" >
+         </activity>
+           
     </application>
-
+    
+	<uses-permission android:name="android.permission.INTERNET" />
+ 
 </manifest>
