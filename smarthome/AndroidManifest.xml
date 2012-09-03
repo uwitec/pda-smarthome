@@ -23,16 +23,19 @@
         
         <activity
             android:name="com.prj.smarthome.MultiCameraActivity"
-            android:label="@+string/multicamera_activity" >
+            android:label="@+string/multicamera_activity" 
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         
          <activity
             android:name="com.prj.smarthome.OneCamera"
+            android:screenOrientation="landscape"
             android:label="@+string/onecamera_activity" >
          </activity>
            
     </application>
     
 	<uses-permission android:name="android.permission.INTERNET" />
- 
+	  
 </manifest>

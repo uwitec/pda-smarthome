@@ -6,13 +6,150 @@
     android:orientation="vertical" >
 
     <RatingBar
-        android:id="@+id/ratingBar1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    android:id="@+id/ratingBar1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
 
-    <VideoView
-        android:id="@+id/a_videoview"
-        android:layout_width="640dp"
-        android:layout_height="480dp" />
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+        
+        <VideoView
+            android:id="@+id/a_videoview"
+            android:layout_width="640dp"
+            android:layout_height="480dp" />
+        
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
+			<LinearLayout
+			    xmlns:android="http://schemas.android.com/apk/res/android"
+			    android:id="@+id/linearLayout4"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:orientation="horizontal" >
+				
+				<Button
+				    android:id="@+id/Button1"
+				    android:layout_width="100dp"
+				    android:layout_height="100dp"
+				    android:text="左上" />
+
+				<Button
+				    android:id="@+id/Button2"
+				    android:layout_width="100dp"
+				    android:layout_height="100dp"
+				    android:text="上" />
+				
+				<Button
+				    android:id="@+id/Button3"
+				    android:layout_width="100dp"
+				    android:layout_height="100dp"
+				    android:text="右上" />
+
+ 				<Button
+				    android:id="@+id/Button21"
+				    android:layout_width="100dp"
+				    android:layout_height="100dp"
+				    android:text="重启摄像头" />
+			</LinearLayout>
+     		
+			<LinearLayout
+			    xmlns:android="http://schemas.android.com/apk/res/android"
+			    android:id="@+id/LinearLayout5"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/Button4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="左" />
+
+                <Button
+                    android:id="@+id/Button5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="停止巡逻" />
+
+                <Button
+                    android:id="@+id/Button6"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="右" />
+            </LinearLayout>
+            
+			<LinearLayout
+			    xmlns:android="http://schemas.android.com/apk/res/android"
+			    android:id="@+id/LinearLayout6"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/Button7"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="左下" />
+
+                <Button
+                    android:id="@+id/Button8"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="下" />
+
+                <Button
+                    android:id="@+id/Button9"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="右下" />
+            </LinearLayout>
+						
+			<LinearLayout
+			    xmlns:android="http://schemas.android.com/apk/res/android"
+			    android:id="@+id/LinearLayout7"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/Button10"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="水平巡逻" />
+
+                <Button
+                    android:id="@+id/Button11"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="上下巡逻" />
+
+                <Button
+                    android:id="@+id/Button12"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="巡逻一周" />
+            </LinearLayout>
+
+			<TextView
+			    android:id="@+id/rtspinfo"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+			
+			<TextView
+			    android:id="@+id/ptzinfo"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />
+			</LinearLayout>
+    </LinearLayout>
 </LinearLayout>
