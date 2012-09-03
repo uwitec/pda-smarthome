@@ -14,21 +14,62 @@
         android:layout_height="match_parent"
         android:orientation="vertical" >
         
-        <EditText
-	        android:id="@+id/camera_ip"
+	    <LinearLayout
+	        xmlns:android="http://schemas.android.com/apk/res/android"
+	        android:id="@+id/CamerasInfoLayout"
 	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:ems="10"
-	        android:hint="admin:nimda@172.16.55.47" >
-	           
-	  	  	<requestFocus /> 
-    	</EditText>
+	        android:layout_height="match_parent"
+	        android:orientation="horizontal" >
+
+	        <EditText
+	            android:id="@+id/camera_ip"
+	            android:layout_width="400dp"
+	            android:layout_height="wrap_content"
+	            android:ems="10"
+	            android:hint="摄像头IP(172.16.55.47)" >
+
+		  	  	<requestFocus /> 
+	    	</EditText>
+	    	
+	        <EditText
+		        android:id="@+id/camera_rtsp_port"
+		        android:layout_width="200dp"
+		        android:layout_height="wrap_content"
+		        android:ems="10"
+		        android:hint="视频流端口(554)" >
+	    	</EditText>
+    	    	
+	        <EditText
+		        android:id="@+id/camera_ptz_port"
+		        android:layout_width="200dp"
+		        android:layout_height="wrap_content"
+		        android:ems="10"
+		        android:hint="云台控制端口(81)" >
+	    	</EditText>
+	        
+	        <EditText
+		        android:id="@+id/camera_login_user"
+		        android:layout_width="200dp"
+		        android:layout_height="wrap_content"
+		        android:ems="10"
+		        android:hint="login user(admin)" >
+	    	</EditText>
+	        
+	        <EditText
+		        android:id="@+id/camera_login_pwd"
+		        android:layout_width="250dp"
+		        android:layout_height="wrap_content"
+		        android:ems="10"
+		        android:hint="login password(nimda)" >
+	    	</EditText>
+	        
+		</LinearLayout>
 
 	    <Button
 	        android:id="@+id/playerbutton"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:text="Add a Camera_H6837WI Vision" />
+	        android:text="Add a Camera_H6837WI Vision, you can add more" />
     
     
     </LinearLayout>
