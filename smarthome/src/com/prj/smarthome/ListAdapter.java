@@ -1,6 +1,5 @@
 package com.prj.smarthome;
 
-import java.io.File;
 import java.util.List;
 
 import android.content.Context;
@@ -10,9 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class ListAdapter extends BaseAdapter {
@@ -112,23 +109,6 @@ public class ListAdapter extends BaseAdapter {
 		}
 		
 		SetIcons(holder,__FuncID,position);
-		/*
-		if("b1".equals(items.get(position))){
-			holder.funcName.setText("返回SD卡根目录");
-			holder.iconL.setImageBitmap(mIcon1);
-			holder.iconR.setImageBitmap(mIcon1);
-			//holder.btn.setVisibility(View.INVISIBLE);
-		}//上级目录
-		else if("b2".equals(items.get(position))){
-			holder.funcName.setText("返回上级 ...");
-			holder.iconL.setImageBitmap(mIcon2);
-			holder.iconR.setImageBitmap(mIcon1);
-		}else{
-			holder.funcName.setText(items.get(position));
-			holder.iconL.setImageBitmap(mIcon3);
-			holder.iconR.setImageBitmap(mIcon1);
-		}
-		*/
 		return convertView;
 	}
 	
