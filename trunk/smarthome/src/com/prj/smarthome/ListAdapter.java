@@ -26,26 +26,26 @@ public class ListAdapter extends BaseAdapter {
 	
 	private void SetIcons(ViewHolder hld,int FuncID,int position) {
 		switch (FuncID) {
-		case 1 : //LED灯光控制
+		case 1 : //LED 灯光控制 
 			hld.funcName.setText(items.get(position));
 			switch (position) {
-			case 0 : //灯光全开
+			case 0 : //灯光全开 
 				hld.iconL.setImageBitmap(IconBuf[2]);
 				hld.iconR.setVisibility(View.INVISIBLE);				
 				break;
-			case 1 : //灯光全关
+			case 1 : //灯光全关 
 				hld.iconL.setImageBitmap(IconBuf[3]);
 				hld.iconR.setVisibility(View.INVISIBLE);
 				break;
-			case 2 : //点控开灯
+			case 2 : //点控开灯 
 				hld.iconL.setImageBitmap(IconBuf[2]);
 				hld.iconR.setVisibility(View.INVISIBLE);
 				break;
-			case 3 : //点控关灯
+			case 3 : //点控关灯 
 				hld.iconL.setImageBitmap(IconBuf[3]);
 				hld.iconR.setVisibility(View.INVISIBLE);
 				break;
-			case 4 : //调光设置
+			case 4 : //调光设置 
 				hld.iconL.setImageBitmap(IconBuf[1]);
 				hld.iconR.setImageBitmap(IconBuf[0]);
 				hld.iconR.setVisibility(View.VISIBLE);
@@ -110,25 +110,7 @@ public class ListAdapter extends BaseAdapter {
 		}else{
 			holder = (ViewHolder) convertView.getTag();
 		}
-		
 		SetIcons(holder,__FuncID,position);
-		/*
-		if("b1".equals(items.get(position))){
-			holder.funcName.setText("返回SD卡根目录");
-			holder.iconL.setImageBitmap(mIcon1);
-			holder.iconR.setImageBitmap(mIcon1);
-			//holder.btn.setVisibility(View.INVISIBLE);
-		}//上级目录
-		else if("b2".equals(items.get(position))){
-			holder.funcName.setText("返回上级 ...");
-			holder.iconL.setImageBitmap(mIcon2);
-			holder.iconR.setImageBitmap(mIcon1);
-		}else{
-			holder.funcName.setText(items.get(position));
-			holder.iconL.setImageBitmap(mIcon3);
-			holder.iconR.setImageBitmap(mIcon1);
-		}
-		*/
 		return convertView;
 	}
 	
