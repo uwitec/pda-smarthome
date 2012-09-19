@@ -1,6 +1,7 @@
 package com.prj.smarthome;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,9 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -68,11 +72,14 @@ public class SmartHomeActivity extends ListActivity {
 	public Bitmap bmp_mainSCRN = Bitmap.createBitmap(935, 570, Config.ARGB_8888); //创建空位图
 	
 	private List<String> List_Items = null;// 适配器:列别名[功能名称] 
+	private Dialogs Dialog_Rslt = new Dialogs(); 
 	
 	
+
 	
 	/*测试使用:画矩形--标示出可相应用户点击动作的(图标)区域
 	 * */
+	/*
 	private void drawAreaRect(int left,int top,int w,int h,int padding) {
 		Canvas cnvs = Holder_sfvMian.lockCanvas();
 		Paint pnt=new Paint();
@@ -85,6 +92,7 @@ public class SmartHomeActivity extends ListActivity {
 		Holder_sfvMian.lockCanvas(new Rect(0, 0, 0, 0));
 		Holder_sfvMian.unlockCanvasAndPost(cnvs);
 	}
+	*/
 	
 	/*判断当前触摸点x,y坐标是否属于某设备图标矩形(选中区域)范围内
 	 * 返回选中对应的dev[i].ID,若未选中任何设备则返回-1
@@ -498,6 +506,51 @@ public class SmartHomeActivity extends ListActivity {
 		}
 		return actLevel;
 	}
+
+	private void DevCTRL_LED(int position) {
+		int rslt = 0;
+		//选中:灯光全开
+		if (this.getString(R.string.ListMenu_led_allon).equals(List_Items.get(position))) {
+			Toast.makeText(this, List_Items.get(position),Toast.LENGTH_SHORT).show();
+			return;
+		}		
+		//选中:灯关全关
+		if (this.getString(R.string.ListMenu_led_alloff).equals(List_Items.get(position))) {
+			Toast.makeText(this, List_Items.get(position),Toast.LENGTH_SHORT).show();
+			return;
+		}
+		//选中:点控开灯
+		if (this.getString(R.string.ListMenu_led_1on).equals(List_Items.get(position))) {
+			Toast.makeText(this, List_Items.get(position),Toast.LENGTH_SHORT).show();
+			return;
+		}
+		//选中:点控关灯
+		if (this.getString(R.string.ListMenu_led_1off).equals(List_Items.get(position))) {
+			Toast.makeText(this, List_Items.get(position),Toast.LENGTH_SHORT).show();
+			return;
+		}	
+		//选中:调光设置
+		if (this.getString(R.string.ListMenu_led_adj).equals(List_Items.get(position))) {
+			LayoutInflater inflater = getLayoutInflater();
+			View dialog_view = inflater.inflate(R.layout.dialog_led_adj,
+							(ViewGroup) findViewById(R.id.dialog));
+			Dialogs.Dialog_Adj_Light(this, dialog_view, 50); //启用调光对话框  在Dialogs.java::Dialog_Adj_Light(contex,layout)函数
+			return;
+		}		
+	}
+	
+	//ListView的单击事件	
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		switch (AppCtrl.OpDev) {
+		case 1 : //DevCtrlParam.java::DEVNAME_LED==1
+			DevCTRL_LED(position);
+			break;
+		case 2 : //DevCtrlParam.java::DEVNAME_CURTAIN==2
+			break;
+		}
+		
+	}
 	
     /** Called when the activity is first created. */
 	/** yes , I change a little and commit to GC **/
@@ -655,41 +708,57 @@ public class SmartHomeActivity extends ListActivity {
 					
 					List_Items = null;
 					List_Items = new ArrayList<String>();
-					List_Items.add("灯光全开");
-					List_Items.add("灯光全关");
-					List_Items.add("点控开灯");
-					List_Items.add("点控关灯");
-					List_Items.add("调光设置");
+					//装载字符strings.xml文件中的字符串
+					List_Items.add(SmartHomeActivity.this.getString(R.string.ListMenu_led_allon));
+					List_Items.add(SmartHomeActivity.this.getString(R.string.ListMenu_led_alloff));
+					List_Items.add(SmartHomeActivity.this.getString(R.string.ListMenu_led_1on));
+					List_Items.add(SmartHomeActivity.this.getString(R.string.ListMenu_led_1off));
+					List_Items.add(SmartHomeActivity.this.getString(R.string.ListMenu_led_adj));
 					//将数据适配器绑定到ListActivity
 					setListAdapter(new ListAdapter(SmartHomeActivity.this, List_Items, AppCtrl.OpDev ));					
 
 					break;
 				case R.id.btn_curtaincrtl :
+/*
+			           //一个监听器，该监听器负责监听进度条状态 的改变  
+			           class SeekBarListener implements OnSeekBarChangeListener {  
+			                  //当进度条的进度发生 变化 时，会调用 该 方法 
+			        	   	  @Override
+			        	   	  public void onProgressChanged(SeekBar seekBar,
+									int progress, boolean fromUser) {  
+			                         System.out.println(progress);  
+			                  }  
+			        	   	  @Override
+			                  public void onStartTrackingTouch(SeekBar seekBar) {  
+			                         System.out.println("start->"+ seekBar.getProgress());  
+			                  } 
+			        	   	  @Override
+			                  public void onStopTrackingTouch(SeekBar seekBar) {  
+			                         System.out.println("stop->"+ seekBar.getProgress());  
+			                  }
+			           }					
 					
 					LayoutInflater inflater = getLayoutInflater();
-					View layout = inflater.inflate(R.layout.dialog,
+					View dialog_view = inflater.inflate(R.layout.dialog_led_adj,
 									(ViewGroup) findViewById(R.id.dialog));
+					final SeekBar seekbar1 = (SeekBar) dialog_view.findViewById(R.id.seekbar);
+					seekbar1.setOnSeekBarChangeListener(new SeekBarListener());  
 
 				    new AlertDialog.Builder(SmartHomeActivity.this)
-					   .setTitle("自定义布局").setView(layout)
+					   .setTitle("自定义布局").setView(dialog_view)
 					   .setIcon(android.R.drawable.ic_menu_more)
 					   .setPositiveButton("确定",new OnClickListener() {
 						   @Override
 						   public void onClick(DialogInterface dialog, int which) {
-						    dialog.dismiss();
+							   Toast.makeText(SmartHomeActivity.this, 
+									   "SeekBarValue="+Integer.toString(seekbar1.getProgress()), 
+									   Toast.LENGTH_SHORT).show();  
+						    //dialog.dismiss();
 						   }})
 					   .setNegativeButton("取消", null)
 					   .show();
+				    */
 
-					
-					/*
-					Dialog_LedCtrl dialog1 = new Dialog_LedCtrl(SmartHomeActivity.this, R.layout.layout_dialog, R.style.Theme_dialog);//Dialog使用默认大小(160) 
-					Dialog_LedCtrl dialog2 = new Dialog_LedCtrl(SmartHomeActivity.this, 500, 300, R.layout.layout_dialog, R.style.Theme_dialog);
-			        dialog2.setTitle("测试");
-					dialog2.show();//显示Dialog
-			        TextView mMessage = (TextView) dialog1.findViewById(R.id.message);
-			        mMessage.setText("加载中...");
-			        */
 					AppCtrl.OpDev = DevDsParam.DEVNAME_CURTAIN;
 					if (true==getDevDisplayParam(DevDsParam.DEVNAME_CURTAIN,AppCtrl)) {
 						//从ini文件读取平面图内的设备点位坐标

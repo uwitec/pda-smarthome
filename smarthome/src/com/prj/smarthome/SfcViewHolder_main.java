@@ -3,7 +3,6 @@ package com.prj.smarthome;
 import com.prj.smarthome.DevDsParam.TDev;
 
 import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;

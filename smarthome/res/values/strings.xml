@@ -17,4 +17,11 @@
     <string name="multicamera_activity">多摄像头监控</string>
     <string name="onecamera_activity">单摄像头</string>
 
+    <string name="ListMenu_led_allon">灯光全开</string>
+    <string name="ListMenu_led_alloff">灯光全关</string>    
+    <string name="ListMenu_led_1on">点控开灯</string>
+    <string name="ListMenu_led_1off">点控关灯</string>    
+    <string name="ListMenu_led_adj">调光设置</string>    
+    
+    
 </resources>

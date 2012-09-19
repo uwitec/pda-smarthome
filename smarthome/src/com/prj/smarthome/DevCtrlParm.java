@@ -1,7 +1,5 @@
 package com.prj.smarthome;
 
-import com.prj.smarthome.DevDsParam.TDev;
-
 public class DevCtrlParm {
 	
 	private short MAXDEVTYPE = 128; //最多128种电器 
