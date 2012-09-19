@@ -10,7 +10,7 @@
 					 android:layout_width="wrap_content"
   				 android:id="@+id/tvname"
   				 android:textSize="24dp" 
-  				 android:text="设置：" />
+  				 android:text="亮度：" />
  
  <SeekBar
     android:id="@+id/seekbar"
