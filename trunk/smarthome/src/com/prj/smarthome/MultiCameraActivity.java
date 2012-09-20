@@ -18,10 +18,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
-
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnErrorListener;
 /*
  * 该播放器不支持需要用户授权的rtsp视频流
  */
@@ -189,6 +191,14 @@ public class MultiCameraActivity extends ActivityGroup {
 			super.onCreate(savedInstanceState);
 			this.setContentView(R.layout.acamera);
 			VideoView vd = (VideoView)findViewById(R.id.a_videoview);
+			vd.setOnErrorListener(new OnErrorListener() {
+				@Override
+				public boolean onError(MediaPlayer mp, int what ,int extra) {
+					Log.e("ZT", "a error happened");
+					Toast.makeText(OneCamera.this, "无法播放此摄像头", Toast.LENGTH_SHORT).show();
+					return true;
+				}
+			});
 			
 			Button bt1 = (Button)findViewById(R.id.Button1);		
 			bt1.setOnClickListener(this);
